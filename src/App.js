@@ -106,39 +106,21 @@ function App() {
               <div className="description">
                 {data.weather ? (
                   <>
-                    {
-                      (data.weather[0].main === "Clouds" ? (
-                        <FontAwesomeIcon icon={faCloud} size="3x" />
-                      ) : (
-                        (data.weather[0].main === "Clear" ? (
-                          <FontAwesomeIcon icon={faSun} size="3x" />
-                        ) : (
-                          (data.weather[0].main === "Snow" ? (
-                            <FontAwesomeIcon icon={faSnowflake} size="3x" />
-                          ) : (
-                            (data.weather[0].main === "Rain" ? (
-                              <FontAwesomeIcon
-                                icon={faCloudShowersHeavy}
-                                size="3x"
-                              />
-                            ) : (
-                              (data.weather[0].main === "Drizzle" ? (
-                                <FontAwesomeIcon icon={faCloudRain} size="3x" />
-                              ) : (
-                                (data.weather[0].main === "Thunderstorm" ? (
-                                  <FontAwesomeIcon
-                                    icon={faCloudBolt}
-                                    size="3x"
-                                  />
-                                ) : (
-                                  <p> {data.weather[0].main} </p>
-                                ))
-                              ))
-                            ))
-                          ))
-                        ))
-                      ))
-                    }
+                    {data.weather[0].main === "Clouds" ? (
+                      <FontAwesomeIcon icon={faCloud} size="3x" />
+                    ) : data.weather[0].main === "Clear" ? (
+                      <FontAwesomeIcon icon={faSun} size="3x" />
+                    ) : data.weather[0].main === "Snow" ? (
+                      <FontAwesomeIcon icon={faSnowflake} size="3x" />
+                    ) : data.weather[0].main === "Rain" ? (
+                      <FontAwesomeIcon icon={faCloudShowersHeavy} size="3x" />
+                    ) : data.weather[0].main === "Drizzle" ? (
+                      <FontAwesomeIcon icon={faCloudRain} size="3x" />
+                    ) : data.weather[0].main === "Thunderstorm" ? (
+                      <FontAwesomeIcon icon={faCloudBolt} size="3x" />
+                    ) : (
+                      <p> {data.weather[0].main} </p>
+                    )}
                   </>
                 ) : null}
               </div>
